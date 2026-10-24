@@ -35,7 +35,6 @@ class PathRecorder(Node):
         self.get_logger().info(
             'Perekam siap'
             'i=maju, j=putar kiri, l=putar kanan, k=berhenti. '
-            'Di finish tekan k, lalu Ctrl+C di sini.')
 
     def clear(self):
         self.last_t = None
@@ -80,7 +79,6 @@ class PathRecorder(Node):
         if moving and turning:
             if not self.warned_arc:
                 self.get_logger().warn(
-                    'Gerak melengkung terdeteksi. Pakai i/j/l/k saja.')
                 self.warned_arc = True
             kind = 'F' if abs(v) / 0.3 >= abs(w) / 0.6 else 'T'
         else:
